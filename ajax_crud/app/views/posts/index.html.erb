@@ -1,6 +1,15 @@
+<h1>Posts</h1>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<form action="<%= posts_path %>">
+  <input type="text" id="search" method: 'GET'>
+</form>
+
+<div class="">
+  <%= render 'form', post: @post %>
+</div>
+
 
 <table id='posts'>
   <thead>
@@ -13,11 +22,9 @@
   <tbody>
     <%= render @posts %>
   </tbody>
-  
+
 </table>
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
-
-<%= render 'form', post: @post %>
+<%# <%= link_to 'New Post', new_post_path %>
